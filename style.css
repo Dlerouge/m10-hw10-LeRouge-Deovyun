@@ -10,7 +10,7 @@
   --gray: #A1A1A1;
 }
 
-body {
+.page {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   font-size: 1.3rem;
@@ -21,63 +21,74 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a1a1a1' fill-opacity='0.59' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-h1 {
+.article__title {
   font-size: 2.5rem;
-}
-
-h1, h2 {
   text-align: center;
 }
 
-a {
+.article__subheading {
+  text-align: center;
+}
+
+.article__link {
+  color: var(--danger-color);
   text-decoration: none;
 }
 
-a:hover {
+.article__link:hover {
   text-decoration: underline;
 }
 
-header {
+.header {
   background-color: var(--primary-color);
   padding: 48px 0;
   border-bottom: var(--secondary-color) 6px solid;
 }
 
-header a {
-  font-size: 1.5rem;
-  color: var(--off-white);
-}
-
-main a {
-  color: var(--danger-color);
-}
-
-main > article, nav{
+.nav {
+  display: flex;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-}
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  text-decoration: none;
+ }
 
-nav {
-  display: flex;
-}
 
-nav > a:not(:first-of-type){
-  margin-left: 24px;
-}
-
-nav > a.logo {
-  margin-right: auto;
+.nav__logo {
   text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--off-white);
+  text-decoration: none;
 }
 
-main > section, main > article {
-  margin-bottom: 96px;
-  box-shadow: 4px 4px 10px var(--gray);
-  background-color: var(--white);
+.nav__logo:hover {
+  text-decoration: underline;
 }
 
-main > section.hero {
+.nav__links {
+  display: flex;
+  gap: 24px;
+  text-decoration: none;
+}
+
+.nav__link {
+  font-size: 1.5rem;
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.hero {
   height: 300px;
   background-image: url(https://picsum.photos/1920/1000);
   background-size: cover;
@@ -87,17 +98,20 @@ main > section.hero {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  margin-bottom: 96px;
+  box-shadow: 4px 4px 10px var(--gray);
+  background-color: var(--white);
 }
 
-section.hero > .call-to-action {
+.hero__call-to-action {
   font-size: 2rem;
   font-weight: 700;
-  text-shadow: var(--white) 0px 0px 10px, var(--white) 0px 0px 20px, var(--gray) 2px 2px 2px;
+  text-shadow: var(--white) 0px 0px 10px, var(--white) 0px 0px 20px, var(--gray) 2px, 2px, 2px;
   padding: 0 48px;
   margin: 0;
 }
 
-section.hero > button {
+.hero__button {
   background-color: var(--secondary-color);
   border: none;
   padding: 12px 24px;
@@ -106,16 +120,22 @@ section.hero > button {
   cursor: pointer;
 }
 
-main article {
+.article {
   padding: 48px 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: 4px 4px 10px var(--gray);
+  margin-bottom: 96px;
+  overflow: hidden;
 }
 
-main p {
+.article__text {
   line-height: 1.75;
-  margin-bottom: 48px;;
+  margin-bottom: 48px;
 }
 
-main > article img {
+.article__image{
   float: left;
   width: 300px;
   height: auto;
@@ -123,7 +143,7 @@ main > article img {
   margin-bottom: 6px;
 }
 
-footer {
+.footer {
   margin-top: auto;
   background-color: var(--gray);
   text-align: center;
